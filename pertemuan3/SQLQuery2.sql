@@ -103,3 +103,16 @@ FROM Production.Product
 WHERE ListPrice > 0 
 GROUP BY Color 
 ORDER BY TotalNilaiStok DESC;
+
+-- Ambil 10 Barang dari ProductID dan total uang yang didapat
+SELECT TOP 10 ProductID, SUM(LineTotal) AS TotalUlang
+-- Asalnya dari tabel sales
+FROM Sales.SalesOrderDetail
+-- Menghitung transaksi yang lebih dari 2
+WHERE OrderQty > 2
+-- Kelompokkan
+GROUP BY ProductID
+-- Filter pendapatan tertinggi
+HAVING SUM(LineTotal) > 50000
+-- Urutkan
+ORDER BY TotalUlang DESC;
