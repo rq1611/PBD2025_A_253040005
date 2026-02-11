@@ -5,7 +5,7 @@ PRINT @Nilai;
 
 --CARA KEDUA
 DECLARE @Nama CHAR(255);
-SET @Nama = 'NOVAL';
+SET @Nama = 'Rifqi';
 PRINT @Nama;
 
 --MEMBUAT IF ELSE
@@ -53,4 +53,5 @@ JOIN KRS K
 ON M.MahasiswaID = K.MahasiswaID
 
 SELECT *
+
 FROM vw_Mahasiswa
